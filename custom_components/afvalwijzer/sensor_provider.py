@@ -11,6 +11,9 @@ from .const.const import (
     ATTR_IS_COLLECTION_DATE_DAY_AFTER_TOMORROW,
     ATTR_IS_COLLECTION_DATE_TODAY,
     ATTR_IS_COLLECTION_DATE_TOMORROW,
+    ATTR_IS_COLLECTION_DATE_MORNING,
+    ATTR_IS_COLLECTION_DATE_AFTERNOON,
+    ATTR_IS_COLLECTION_DATE_EVENING,
     ATTR_LAST_UPDATE,
     ATTR_YEAR_MONTH_DAY_DATE,
     ATTR_ISOFORMATTED_DATE,
@@ -46,6 +49,9 @@ class ProviderSensor(Entity):
         self._is_collection_date_today = False
         self._is_collection_date_tomorrow = False
         self._is_collection_date_day_after_tomorrow = False
+        self._is_collection_date_morning = True
+        self._is_collection_date_afternoon = False
+        self._is_collection_date_evening = False
         self._year_month_day_date = None
         self._isoformatted_date = None
         self._unique_id = hashlib.sha1(
@@ -78,6 +84,9 @@ class ProviderSensor(Entity):
             ATTR_IS_COLLECTION_DATE_TODAY: self._is_collection_date_today,
             ATTR_IS_COLLECTION_DATE_TOMORROW: self._is_collection_date_tomorrow,
             ATTR_IS_COLLECTION_DATE_DAY_AFTER_TOMORROW: self._is_collection_date_day_after_tomorrow,
+            ATTR_IS_COLLECTION_DATE_MORNING: self._is_collection_date_morning,
+            ATTR_IS_COLLECTION_DATE_AFTERNOON: self._is_collection_date_afternoon,
+            ATTR_IS_COLLECTION_DATE_EVENING: self._is_collection_date_evening,            
             ATTR_YEAR_MONTH_DAY_DATE: self._year_month_day_date,
             ATTR_ISOFORMATTED_DATE: self._isoformatted_date,
         }
